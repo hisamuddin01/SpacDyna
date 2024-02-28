@@ -1,0 +1,145 @@
+/*========== GOOGLE FONTS ========== */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/*========== RESET ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #000;
+  background-color: #ffffff;
+  font-family: "Noto Sans", sans-serif;
+}
+img {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/*========== GOOGLE STYLES ========== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-blue {
+  color: #0000ff;
+}
+.text-red {
+  color: #ff0000;
+}
+/*========== HEADER ========== */
+#header {
+  background-color: #f2f2f2;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.logo {
+  color: #0000ff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.scroll-link {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+}
+.scroll-link:hover {
+  color: #ff0000;
+}
+.scroll-link.active {
+  color: #ff0000;
+}
+/*  === NAV-TOGGLE === */
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  position: relative;
+  background-color: #000;
+  width: 30px;
+  height: 2px;
+  border-radius: 5px;
+}
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  transform-origin: center;
+  transition: all 400ms ease;
+}
+.nav-toggle span::before {
+  top: -9px;
+}
+.nav-toggle span::after {
+  top: 9px;
+}
+.nav-toggle.close span {
+  visibility: hidden;
+}
+.nav-toggle.close span::before {
+  visibility: visible;
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.close span::after {
+  visibility: visible;
+}
+.nav-toggle.close span::after {
+  visibility: visible;
+  transform: translateY(-9px) rotate(-45deg);
+}
+@media screen and (max-width: 992px) {
+  .nav-toggle {
+    display: flex;
+  }
+  #header {
+    position: relative;
+  }
+  .links-container {
+    position: absolute;
+    background-color: #f2f2f2;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    transform-origin: top;
+    height: 0;
+    overflow: hidden;
+    transition: all 300ms ease;
+  }
+  .nav-links {
+    all: unset;
+  }
+  .nav-links li {
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #f9f9f9;
+  }
+}
