@@ -26,7 +26,7 @@
   --letter-spacing-md: 1.25px;
 
   /* === LINE HEIGHT === */
-  --line-height-sm: 1;
+  --line-height-sm: 1.1;
   --line-height-md: 1.25;
   --line-height-lg: 2;
 
@@ -590,7 +590,7 @@ h4 {
 .contact {
   background-image: var(--liner-gradient-red);
 }
-.contact .flex-center {
+.contact-wrapper {
   gap: 1rem;
 }
 .contact .contact-content * {
@@ -637,8 +637,20 @@ textarea.form-input {
   font-weight: var(--fw-normal);
   letter-spacing: var(--letter-spacing-sm);
 }
-
+@media screen and (max-width: 992px) {
+  .contact span {
+    display: block;
+    margin: 1rem 0;
+  }
+  .contact span .icon {
+    margin-left: 0;
+  }
+}
 @media screen and (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+    gap: 0;
+  }
   .contact-wrapper {
     flex-direction: column;
   }
@@ -646,11 +658,63 @@ textarea.form-input {
     width: 100%;
     flex-direction: column;
   }
-  .contact span {
-    display: block;
-    margin: 1rem 0;
-  }
-  .contact span .icon {
-    margin-left: 0;
+}
+
+.footer {
+  padding: 4rem 0;
+  background-color: var(--light-clr-2);
+}
+.footer .flex-center {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer .col:first-child {
+  flex: 2;
+}
+.footer .col {
+  flex: 1;
+}
+.footer .col .footer-col-header {
+  margin-bottom: 1.5rem;
+}
+.site-footer {
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--dark-clr);
+}
+.site-footer p {
+  color: var(--light-clr-2);
+  font-size: 14px;
+}
+.footer-col:first-child ul {
+  justify-content: flex-start;
+  gap: 10px;
+}
+.footer-col:first-child p {
+  line-height: var(--line-height-md);
+  margin-bottom: 2rem;
+}
+.footer-col:first-child ul li {
+  width: 40px;
+  height: 40px;
+  background-image: var(--liner-gradient-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-lg);
+}
+.footer-col:first-child ul li a {
+  color: var(--primary-color-2);
+}
+.footer-col:not(:first-child) li {
+  margin-bottom: 0.75rem;
+}
+.footer-col:not(:first-child) li a {
+  color: var(--dark-clr);
+}
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
   }
 }
